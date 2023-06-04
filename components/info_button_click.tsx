@@ -12,44 +12,35 @@ import Image from 'next/image'
 export default function Info_Button() {
     const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
 
-    const handlePopoverOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
 
-    const handlePopoverClose = () => {
+    const handleClose = () => {
         setAnchorEl(null);
     };
 
     const open = Boolean(anchorEl);
+    const id = open ? 'simple-popover' : undefined;
 
     return (
         <>
             <Button 
-                aria-owns={open ? 'mouse-over-popover' : undefined}
-                aria-haspopup="true"
-                variant="contained"
-                onMouseEnter={handlePopoverOpen}
-                onMouseLeave={handlePopoverClose}
+                aria-describedby={id} 
+                variant="contained" 
+                onClick={handleClick}
             >
                 Open Popover
             </Button>
             <Popover
-                id="mouse-over-popover"
-                sx={{
-                  pointerEvents: 'none',
-                }}
+                id={id}
                 open={open}
                 anchorEl={anchorEl}
+                onClose={handleClose}
                 anchorOrigin={{
                   vertical: 'bottom',
                   horizontal: 'left',
                 }}
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-                onClose={handlePopoverClose}
-                disableRestoreFocus
             >
                 <div style={{
                     padding: "20px"
