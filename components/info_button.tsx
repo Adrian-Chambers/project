@@ -1,5 +1,13 @@
 import { Button, Popover, Typography } from '@mui/material'
 import React from 'react';
+import Image from 'next/image'
+
+/*
+*  React MUI Popover
+*  https://mui.com/material-ui/react-popover/
+*
+*  The image "src" is found in the "public" folder. 
+*/
 
 export default function Info_Button() {
     const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
@@ -43,7 +51,18 @@ export default function Info_Button() {
                 onClose={handlePopoverClose}
                 disableRestoreFocus
             >
-                <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
+                <div style={{
+                            padding: "20px"
+                        }}>
+                    <Typography >The content of the Popover.</Typography>
+                    <Image 
+                        src="/dc40a0f4a47f5adb.png" 
+                        alt="contract"
+                        height={100}
+                        width={100}
+                
+                    />
+                </div>
             </Popover>
         </>
     )
