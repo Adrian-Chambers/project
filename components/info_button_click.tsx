@@ -1,6 +1,10 @@
-import { Button, Popover, Typography } from '@mui/material'
+import { Button, IconButton, Popover, Typography } from '@mui/material'
 import React from 'react';
 import Image from 'next/image'
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import HelpIcon from '@mui/icons-material/Help';
+import HelpCenterIcon from '@mui/icons-material/HelpCenter';
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
 /*
 *  React MUI Popover
@@ -25,13 +29,10 @@ export default function Info_Button() {
 
     return (
         <>
-            <Button 
+            <IconButton 
                 aria-describedby={id} 
-                variant="contained" 
                 onClick={handleClick}
-            >
-                Open Popover
-            </Button>
+            ><HelpOutlineIcon /></IconButton>
             <Popover
                 id={id}
                 open={open}
