@@ -1,10 +1,7 @@
-import { Button, IconButton, Popover, Typography } from '@mui/material'
+import { IconButton, Popover, Typography } from '@mui/material'
 import React from 'react';
 import Image from 'next/image'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import HelpIcon from '@mui/icons-material/Help';
-import HelpCenterIcon from '@mui/icons-material/HelpCenter';
-import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
 /*
 *  React MUI Popover
@@ -16,41 +13,32 @@ import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 export default function Info_Button() {
     const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
 
-    const handlePopoverOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
 
-    const handlePopoverClose = () => {
+    const handleClose = () => {
         setAnchorEl(null);
     };
 
     const open = Boolean(anchorEl);
+    const id = open ? 'simple-popover' : undefined;
 
     return (
         <>
             <IconButton 
-                aria-owns={open ? 'mouse-over-popover' : undefined}
-                aria-haspopup="true"
-                onMouseEnter={handlePopoverOpen}
-                onMouseLeave={handlePopoverClose}
+                aria-describedby={id} 
+                onClick={handleClick}
             ><HelpOutlineIcon /></IconButton>
             <Popover
-                id="mouse-over-popover"
-                sx={{
-                  pointerEvents: 'none',
-                }}
+                id={id}
                 open={open}
                 anchorEl={anchorEl}
+                onClose={handleClose}
                 anchorOrigin={{
                   vertical: 'bottom',
                   horizontal: 'left',
                 }}
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-                onClose={handlePopoverClose}
-                disableRestoreFocus
             >
                 <div style={{
                     padding: "20px"

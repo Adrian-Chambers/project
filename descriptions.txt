@@ -1,0 +1,20 @@
+Welcome to our email and phone management system! Here, you can view and manage the email addresses and phone numbers associated with your account.
+
+
+EMAIL ADDRESSES
+
+The email addresses associated with your account are shown below. Here is what you can do with our email management system:
+
+-Add: expand your communication options by adding new email addresses.
+-Remove: keep your account up to date by removing unnecessary email addresses.
+-Set primary: choose one email address to set as your primary contact method. Important notifications will be sent here by default.
+-Verify: ensure that your email addresses are valid by verifying any unverified email addresses on the list.
+
+
+
+The email addresses associated with your account are shown below. Here is what you can do with our email management system:
+
+-Add new email addresses to expand your communication options.
+-Remove email addresses to keep your information up to date.
+-Choose one email address to set as your primary contact method. Important notifications will be sent here by default.
+-Verify any unverified email addresses on the list. Verification ensures that your email address is valid and adds an extra layer of security.
